@@ -175,6 +175,7 @@ public class ShipmentResource {
     public ResponseEntity<Void> deleteShipment(@PathVariable String id) {
         log.debug("REST request to delete Shipment : {}", id);
         shipmentService.delete(id);
+
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id)).build();
     }
 }
